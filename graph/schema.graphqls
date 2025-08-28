@@ -1,0 +1,23 @@
+type House {
+  id: ID!
+  name: String!
+  head_of_house: String
+  students: [Student!]
+}
+
+type Student {
+  id: ID!
+  name: String!
+  age: Int
+  house: House
+}
+
+type Query {
+  houses: [House!]!
+  studentsByHouse(houseID: ID!): [Student!]!
+}
+
+type Mutation {
+  createHouse(name: String!, head_of_house: String): House!
+  createStudent(name: String!, age: Int!, houseID: ID!): Student!
+}

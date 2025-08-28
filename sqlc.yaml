@@ -1,0 +1,10 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    schema: "db/migrations/001_init.up.sql"
+    queries: "db/query.sql"
+    gen:
+      go:
+        package: "db"
+        out: "db"
+        emit_interface: true

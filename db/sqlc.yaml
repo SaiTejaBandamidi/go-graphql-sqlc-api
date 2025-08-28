@@ -1,0 +1,10 @@
+version: "2"
+packages:
+  - name: db
+    path: internal/db
+    queries: "db/query.sql"
+    schema: "db/migrations"
+    engine: "postgresql"
+    emit_prepared_queries: false
+    emit_interface: true
+    emit_exact_table_names: false
